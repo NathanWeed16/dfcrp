@@ -13,4 +13,4 @@ The Rand Index Code folder contains code used and draws obtained in the simulati
 
 The Samplers folder contains the DFCRP Gibbs sampler and supporting code. It includes code for the permutation and alpha Metropolis-Hastings samplers (Sections 1 and 2.2 in the supplement), R code to evaluate the DFCRP prior, and C++ code to evaluate the DFCRP prior (rewritten for efficiency).
 
-The Timing folder contains the timing calculations used to determine the speedup of the neighborhood modification. It also contains Figure 4 in the paper.
+The Timing folder contains the timing calculations used to determine the speedup of the neighborhood modification, along with the script for and results from the DFCRP prior timing calculation in Section 2.3 of the supplement. It also contains Figure 4 in the paper.
