@@ -1,6 +1,8 @@
 This repository contains code and data relevant to the Dysfunctional Family Chinese Restaurant Process, as seen in "Clustering Craters on the
 Moon with Dysfunctional Families".
 
+The Final Application folder contains code and results from Section 8 of the paper, where we analyze the full crater image data using the sampler presented in the paper. The folder contains Figure 5 in the paper, Figures 1 and 2 from the supplement, code to generate Tables 4 and 5 in the paper, and partitions, alphas, permutations, and cluster-specific means and covariances from 200,000 draws of the sampler. The draws are divided first by value type, and then by quarter of the chain. These draws are already thinned (only one in every 10 scans were recorded) but are pre burn-in (we only used the second two quarters of the chains for our analysis).
+
 The Introductory Plots folder contains code and PDFs for the data visualization plots presented in Section 1 of the paper (Figures 2 and 3).
 
 The Perm Proposal Modification folder contains code and results for our analysis of the permutation proposal algorithm modification as seen in Section 2.3 of the supplemental material. It includes code and results measuring the speedup obtained, and also provides code to produce Table 1 in the supplement.
