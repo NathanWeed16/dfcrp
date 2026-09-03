@@ -5,7 +5,7 @@ source("DFCRP_Gibbs.R")
 #done
 
 # Read in the data and subset it for testing the radius
-crater_data<-read.table("Crater_Meas_data.txt", header = T, sep = " ")
+crater_data<-read.table("/Users/nathanweed/Research/DFCRP/Code/Crater_Meas_data.txt", header = T, sep = " ")
 which_con <- which(crater_data$Observer == "Concensus")
 crater_data <- crater_data[-which_con, ]
 too_small <- which(crater_data$Diameter < 18)

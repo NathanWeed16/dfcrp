@@ -3,10 +3,10 @@ library(lubridate)
 library(mvtnorm)
 library(Matrix)
 
-source("DFCRP_alpha&pmf.R")
-source("Perm_Sampler.R")
+source("Samplers/Alpha_Sampler.R")
+source("Samplers/Perm_Sampler.R")
 
-Rcpp::sourceCpp("DFCRP_Prior_Optimized.cpp")
+Rcpp::sourceCpp("Samplers/DFCRP_Prior_Optimized.cpp")
 ################################
 #' Produces samples of the cluster/table assignment through a collapsed Gibbs sampler for the dysfunctional family Chinese restaurant process (DFCRP).
 #' @param data_to_cluster (data.frame) that includes the features to cluster on and the family specification. Could contain other, unused columns. 
@@ -546,9 +546,3 @@ write_mu_draw <- function(mus, current_table_assignments, file){
   
 } #------write_mu_draw--------#
 
-
-
-# Here's how to get the data
-# Code and data to Github
-# 
-# datums <- read.table("M146959973L.txt", header = T)

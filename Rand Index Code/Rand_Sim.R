@@ -1,7 +1,7 @@
 library(flexclust)
-source("DFCRP_Gibbs.R") # Contains the dfcrp_sampler function
-source("SimData.R") # Includes the simulate_family_data function
-source("CRP_Gibbs.R") # Contains the crp_sampler function with the alpha prior included
+source("Samplers/DFCRP_Gibbs.R") # Contains the dfcrp_sampler function
+source("Rand Index Code/SimData.R") # Includes the simulate_family_data function
+source("Rand Index Code/CRP_Gibbs.R") # Contains the crp_sampler function with the alpha prior included
 
 #for i in {1..125}; do
 #R CMD BATCH --no-save --no-restore "--args $i" Rand_Sim.R &
@@ -161,16 +161,16 @@ simrand <- function(arg, simnumber, K, J, X_limits, Y_limits, a_diameter, b_diam
                        perc_crp_illegal = illassign)
   
   return(list(randoutput = output,
-              simdata    = data.frame(simdat,simdat = simnumber), 
-              count_vec  = avg_count_vec,
-              count_rad_vec = avg_rad_count_vec,
-              count_crp_vec = avg_crp_count_vec))
+              simdata    = data.frame(simdat,simdat = simnumber)))
   
 }
-
+set.seed(8202026)
 output_mat<-matrix(nrow = 4, ncol = 5)
-for (i in 1:4){
-   output<-simrand(args, i, K=30, J=6, X_limits = c(0,700), Y_limits = c(0,500), a_diameter = 64, b_diameter = 16, true_rate=c(0.98, 0.96, 0.94, 0.92, 0.9, 0.88), error_rate=c(0.12, 0.1, 0.08, 0.06, 0.04, 0.02), niter=10000*30, mu0 = c(350, 250, 3.9), sigma0 = matrix(c(300^2, 0, 0, 0, 225^2, 0, 0, 0, 0.45^2), nrow = 3))
+for (i in 1:1){
+   output<-simrand(args, i, K=30, J=6, X_limits = c(0,700), Y_limits = c(0,500), a_diameter = 64, 
+                   b_diameter = 16, true_rate=c(0.98, 0.96, 0.94, 0.92, 0.9, 0.88), 
+                   error_rate=c(0.12, 0.1, 0.08, 0.06, 0.04, 0.02), niter=100*30, 
+                   mu0 = c(350, 250, 3.9), sigma0 = matrix(c(300^2, 0, 0, 0, 225^2, 0, 0, 0, 0.45^2), nrow = 3))
    output_mat[i, 1:5]<-as.numeric(output[[1]][1, 1:5])
 }
 

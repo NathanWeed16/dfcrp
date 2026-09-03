@@ -1,6 +1,6 @@
 library(MCMCpack)
 library(mvtnorm)
-source("CRP_alpha&pmf.R")
+source("Rand Index Code/CRP_alpha&pmf.R")
 
 crp_sampler <- function(data_to_cluster, family = NULL, features, location_vars = NULL, radius = NULL, starting_assignment = NULL, alpha = 1, alpha_prop_precision = 20, alpha_prior_shape = 1, alpha_prior_rate = 0.01, mu0 = c(2068.171, -1105.497, 3.8), sigma0 = matrix(c(920^2, 0, 0, 0, 600^2, 0, 0, 0, 0.65^2), nrow = 3), sigma_prop_mat = matrix(c(3000, 0, 0, 0, 0.9, 0, 0, 0, 0.2), nrow = 3), niter = 2000, output_filename = "dfcrp_sampler", print_status = F, init_mus = NULL, init_sigmas = NULL, print_vec = NULL){
   

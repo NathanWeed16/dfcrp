@@ -3,7 +3,7 @@ library(ggplot2)
 library(dplyr)
 library(patchwork)
 #for i in {1..200}; do
-#R CMD BATCH --no-save --no-restore "--args $i" TheBigOne.R &
+#R CMD BATCH --no-save --no-restore "--args $i" FullDataRun.R &
 #done
 
 Rprof("TheFinal")
